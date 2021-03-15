@@ -1,4 +1,3 @@
-import React from "react";
 import Grid from "@material-ui/core/Grid";
 import InputLabel from "@material-ui/core/InputLabel";
 import { withStyles, WithStyles } from "@material-ui/core/styles";
