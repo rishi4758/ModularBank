@@ -1,7 +1,7 @@
 # Commands to run the project  after git clone
-cd ModularBank
-npm install
-npm start
+cd ModularBank. 
+npm install. 
+npm start. 
 
 # Technology stack
  TypeScript - because it provide static type checking  which helps to identify errors earlier and it Improved maintainability, code consistency, and future browser support.  
