@@ -1,11 +1,6 @@
 import React, { ChangeEvent, useEffect, useState, FormEvent } from "react";
 import { RouteComponentProps } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  industryData,
-  countryData,
-  operatingGeography,
-} from "../../data/index";
 import { store } from "../../store/reducer";
 import Form from "./form";
 import {
