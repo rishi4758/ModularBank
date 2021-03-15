@@ -7,6 +7,11 @@ import Input from "./input";
 import Select from "./select";
 import TextArea from "./texArea";
 import CheckBox from "./checkbox";
+import {
+  industryData,
+  countryData,
+  operatingGeography,
+} from "../../data/index";
 import { withStyles, WithStyles } from "@material-ui/core/styles";
 import Styles from "./styles";
 interface props {
@@ -64,17 +69,7 @@ function Form({
             />
 
             <Select
-              renderData={[
-                "Automotive",
-                "Consulting",
-                "Finance",
-                "Healthcare",
-                "Media/PR",
-                "Retail",
-                "Technology",
-                "Telecommunication",
-                "Other",
-              ]}
+              renderData={industryData}
               label="Industry*"
               name="industry"
               handleChange={handleChange}
@@ -82,23 +77,14 @@ function Form({
             />
 
             <Select
-              renderData={[
-                "Switzerland",
-                "Canada",
-                "Japan",
-                "Germany",
-                "Australia.",
-                "United Kingdom",
-                "United States",
-                "Sweden.",
-              ]}
+              renderData={countryData}
               label="Country*"
               name="country"
               handleChange={handleChange}
               defaultValue="N/A"
             />
             <Select
-              renderData={["National", "Regional", "Global"]}
+              renderData={operatingGeography}
               label="Operating geography"
               name="operatingGeography"
               handleChange={handleChange}
