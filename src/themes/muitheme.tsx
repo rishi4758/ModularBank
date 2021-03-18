@@ -13,6 +13,17 @@ const theme = createMuiTheme({
 });
 
 theme.overrides = {
+  MuiMenuItem: {
+    root: {
+      fontSize: 14,
+      display: "flex",
+
+      "&:hover": {
+        color: "#fff",
+        backgroundColor: "#3d517d",
+      },
+    },
+  },
   MuiButton: {
     disabled: { opacity: 0.6 },
     root: {
@@ -31,11 +42,57 @@ theme.overrides = {
       fontFamily: "Calibri",
     },
   },
+  MuiMenu: {
+    paper: {
+      maxHeight: "330px",
+      width: "295px",
+      borderRadius: 0,
+      padding: 0,
+      margin: 0,
+      marginTop: 10,
+
+      [theme.breakpoints.down("sm")]: {
+        maxHeight: "350px",
+        width: "90%",
+      },
+      background: "#fff",
+    },
+  },
+  MuiSelect: {
+    select: {
+      height: 36,
+      padding: 0,
+      position: "relative",
+      display: "flex",
+      alignItems: "center",
+      "&:focus": { backgroundColor: "#fff" },
+
+      [theme.breakpoints.down("sm")]: {
+        width: "100%",
+      },
+    },
+    outlined: {
+      height: 24,
+      fontSize: 15,
+      fontFamily: "Calibri",
+      fontStyle: "normal",
+      background: "#fff",
+      borderRadius: 0,
+      borderWidth: 0,
+      [theme.breakpoints.down("sm")]: {
+        width: "100%",
+      },
+      "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+        border: "none",
+      },
+    },
+    icon: { color: "#000" },
+  },
   MuiOutlinedInput: {
     root: {
       height: 36,
       width: 380,
-      fontSize: 16,
+      fontSize: 15,
       fontFamily: "Calibri",
       fontStyle: "normal",
       background: "#fff",
@@ -78,11 +135,9 @@ theme.overrides = {
       fontFamily: "Calibri",
       fontStyle: "normal",
       height: 24,
-      fontSize: 16,
+      fontSize: 15,
+      fontWeight: 10,
       color: "#fff",
-      [theme.breakpoints.down("sm")]: {
-        fontSize: 15,
-      },
     },
   },
   MuiTypography: {

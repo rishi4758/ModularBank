@@ -41,6 +41,12 @@ const initState = {
 export default function reducer(state: store = initState, action: any) {
   switch (action.type) {
     case HANDLE_INPUT:
+      if (state.user.industry === "") {
+        return {
+          ...state,
+          user: { ...state.user, industry: "Banking", ...action.payload },
+        };
+      }
       return { ...state, user: { ...state.user, ...action.payload } };
     case HANDLE_SUBMIT:
       if (
@@ -55,15 +61,6 @@ export default function reducer(state: store = initState, action: any) {
       }
       return { ...state, isSubmit: false };
     case HANDLE_PRIVACY:
-      let industry;
-      if (state.user.industry === "") {
-        industry = "Banking";
-        return {
-          ...state,
-          user: { ...state.user, ...{ ["industry"]: industry } },
-          isPrivacy: !state.isPrivacy,
-        };
-      }
       return {
         ...state,
         isPrivacy: !state.isPrivacy,

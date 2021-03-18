@@ -7,24 +7,23 @@ import Input from "./input";
 import Select from "./select";
 import TextArea from "./texArea";
 import CheckBox from "./checkbox";
-import {
-  industryData,
-  countryData,
-  operatingGeography,
-} from "../../data/index";
+import { store } from "../../store/reducer";
+import { useSelector } from "react-redux";
+import countryData from "../../data/countries.json";
+import industryData from "../../data/industry.json";
+import operatingGeography from "../../data/operatingGeograhy.json";
 import { withStyles, WithStyles } from "@material-ui/core/styles";
 import Styles from "./styles";
 interface props {
   handleChange(event: any): void;
-  isSubmit: boolean;
   submitForm(event: FormEvent<HTMLFormElement>): void;
 }
 function Form({
   handleChange,
-  isSubmit,
   classes,
   submitForm,
 }: props & WithStyles<typeof Styles>) {
+  const data = useSelector<store, store>((state) => state);
   return (
     <Grid container className={classes.formContainer} data-test="nav-bar">
       <Information />
@@ -67,24 +66,25 @@ function Form({
               handleChange={handleChange}
               isRequired={false}
             />
-
             <Select
               renderData={industryData}
               label="Industry*"
               name="industry"
+              value={data.user.industry}
               handleChange={handleChange}
               defaultValue="Banking"
             />
-
             <Select
               renderData={countryData}
               label="Country*"
               name="country"
+              value={data.user.country}
               handleChange={handleChange}
               defaultValue="N/A"
             />
             <Select
               renderData={operatingGeography}
+              value={data.user.operatingGeography}
               label="Operating geography"
               name="operatingGeography"
               handleChange={handleChange}
@@ -97,7 +97,6 @@ function Form({
               name="about"
               handleChange={handleChange}
             />
-
             <Grid
               item
               xs={12}
@@ -130,7 +129,7 @@ function Form({
                 <Button
                   type="submit"
                   disableFocusRipple={true}
-                  disabled={!isSubmit}
+                  disabled={!data.isSubmit}
                 >
                   Send
                 </Button>

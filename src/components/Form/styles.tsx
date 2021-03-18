@@ -44,27 +44,22 @@ const Style = (theme: typeof Theme) => ({
   inputContainer: {
     padding: "15px",
     height: "68px",
+    marginBottom: 18,
     [theme.breakpoints.down("sm")]: { marginBottom: 15, padding: "0px" },
   },
 
   //------styling  select component in select.tsx file ---------
-  selectContainer: {
-    height: 36,
-    width: 380,
-    fontWeight: 400,
-    background: "#fff",
-    backgroundPositionX: "100%",
-    backgroundPsitionY: "5px",
-    border: 0,
-    outline: 0,
-    "&:focus": { borderStyle: "none", boxShadow: "none" },
+  popOver: {},
+  flagImage: {
+    width: 16,
+    height: 16,
+    marginRight: "10%",
     [theme.breakpoints.down("sm")]: {
-      width: "100%",
+      marginRight: "5%",
     },
   },
 
   //------styling  text-areacomponent in textArea.tsx file ---------
-
   textAreaContainer: {
     padding: 15,
     [theme.breakpoints.down("sm")]: {
@@ -78,6 +73,7 @@ const Style = (theme: typeof Theme) => ({
     borderRadius: 0,
     width: "700px",
   },
+
   //------styling  checkBox Container in form.tsx file ---------
   checkboxContainer: {
     padding: 15,

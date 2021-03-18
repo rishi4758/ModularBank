@@ -1,5 +1,8 @@
 import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
+import MenuItem from "@material-ui/core/MenuItem";
 import InputLabel from "@material-ui/core/InputLabel";
+import Select from "@material-ui/core/Select";
 import { withStyles, WithStyles } from "@material-ui/core/styles";
 import Styles from "./styles";
 
@@ -7,14 +10,17 @@ interface props {
   handleChange(event: any): void;
   label: string;
   name: string;
-  renderData: string[];
+  renderData: {}[];
+  value: string;
   defaultValue: string;
 }
+
 function SelectInput({
   handleChange,
   classes,
   label,
   name,
+  value,
   renderData,
   defaultValue,
 }: props & WithStyles<typeof Styles>) {
@@ -30,24 +36,49 @@ function SelectInput({
       <Grid item container justify="flex-start">
         <InputLabel>{label}</InputLabel>
       </Grid>
+
       <Grid item container justify="flex-start">
-        <select
+        <Select
+          value={value}
           name={name}
-          className={classes.selectContainer}
+          variant="outlined"
           onChange={handleChange}
+          displayEmpty
+          MenuProps={{
+            anchorOrigin: {
+              vertical: "bottom",
+              horizontal: "left",
+            },
+            PopoverClasses: {},
+            transformOrigin: {
+              vertical: "top",
+              horizontal: "left",
+            },
+            getContentAnchorEl: null,
+          }}
           defaultValue={name === "industry" ? defaultValue : ""}
         >
-          <option value={name === "industry" ? defaultValue : ""}>
-            {defaultValue}
-          </option>
-          {renderData.map((item: string, index: any) => {
+          <MenuItem value="">
+            <Box pl={1}>{defaultValue}</Box>
+          </MenuItem>
+          {renderData.map((item: any, index: any) => {
             return (
-              <option key={index} value={item}>
-                {item}
-              </option>
+              <MenuItem key={index} value={item.name}>
+                <Box pl={1}>
+                  {name === "country" && (
+                    <img
+                      key={index}
+                      className={classes.flagImage}
+                      alt={item.alpha3}
+                      src={`http:${item.file_url}`}
+                    />
+                  )}
+                  {item.name}
+                </Box>
+              </MenuItem>
             );
           })}
-        </select>
+        </Select>
       </Grid>
     </Grid>
   );

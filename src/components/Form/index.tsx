@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useEffect, useState, FormEvent } from "react";
 import { RouteComponentProps } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { store } from "../../store/reducer";
+
 import Form from "./form";
 import {
   handleInput,
@@ -12,7 +12,7 @@ import {
 const Main: React.FC<RouteComponentProps> = ({ history }) => {
   const dispatch = useDispatch();
   const [checkRequiredField, setCheckRequiredField] = useState(false);
-  const data = useSelector<store, store>((state) => state);
+
   useEffect(() => {
     dispatch(handleSubmit());
   }, [checkRequiredField]);
@@ -28,13 +28,7 @@ const Main: React.FC<RouteComponentProps> = ({ history }) => {
     event.preventDefault();
     history.push("/success");
   };
-  return (
-    <Form
-      handleChange={handleChange}
-      submitForm={submitForm}
-      isSubmit={data.isSubmit}
-    />
-  );
+  return <Form handleChange={handleChange} submitForm={submitForm} />;
 };
 
 export default Main;
