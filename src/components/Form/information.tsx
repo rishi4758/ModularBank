@@ -17,7 +17,14 @@ function Information({ classes }: WithStyles<typeof Styles>) {
       >
         Contact us
       </Grid>
-      <Grid item xs={12} sm={5} container justify="center">
+      <Grid
+        item
+        xs={12}
+        sm={5}
+        container
+        justify="center"
+        className={classes.infoContainer}
+      >
         <Grid container className={classes.textContainer} justify="flex-start">
           <Grid container>
             <Typography variant="h4">Media enquiries:</Typography>

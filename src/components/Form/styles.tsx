@@ -31,8 +31,14 @@ const Style = (theme: typeof Theme) => ({
   },
 
   //------styling  information component in information.tsx file ---------
+  infoContainer: {
+    maxHeight: 600,
+    display: "flex",
+    alignItems: "space-between",
+  },
   textContainer: {
     marginBottom: 30,
+    lineHeight: 0,
   },
   infoEmail: {
     fontSize: 22,
@@ -49,7 +55,6 @@ const Style = (theme: typeof Theme) => ({
   },
 
   //------styling  select component in select.tsx file ---------
-  popOver: {},
   flagImage: {
     width: 16,
     height: 16,

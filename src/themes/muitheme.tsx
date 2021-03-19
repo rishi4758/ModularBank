@@ -147,7 +147,7 @@ theme.overrides = {
     },
     h4: {
       fontSize: 20,
-      lineHeight: 1.5,
+      lineHeight: 1,
       color: "#fff",
       fontWeight: 400,
     },
