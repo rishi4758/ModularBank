@@ -34,7 +34,7 @@ const Style = (theme: typeof Theme) => ({
   infoContainer: {
     maxHeight: 600,
     display: "flex",
-    alignItems: "space-between",
+    // alignItems: "space-between",
   },
   textContainer: {
     marginBottom: 30,

@@ -31,7 +31,7 @@ function Information({ classes }: WithStyles<typeof Styles>) {
           </Grid>
 
           <Grid container>
-            <Typography className={classes.infoEmail}>
+            <Typography variant="h4" className={classes.infoEmail}>
               press@modularbank.co
             </Typography>
           </Grid>
@@ -43,7 +43,7 @@ function Information({ classes }: WithStyles<typeof Styles>) {
           </Grid>
 
           <Grid container>
-            <Typography className={classes.infoEmail}>
+            <Typography variant="h4" className={classes.infoEmail}>
               careers@modularbank.co
             </Typography>
           </Grid>
