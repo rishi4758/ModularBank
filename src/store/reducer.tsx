@@ -12,8 +12,8 @@ export interface store {
     email: string;
     jobTitle: string;
     company: string;
-    industry: string;
     defaultIndustry: string;
+    industry: string;
     country: string;
     operatingGeography: string;
     about: string;
