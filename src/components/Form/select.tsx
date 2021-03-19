@@ -36,7 +36,7 @@ function SelectInput({
       <Grid item container justify="flex-start">
         <InputLabel>{label}</InputLabel>
       </Grid>
-
+      {console.log(value)}
       <Grid item container justify="flex-start">
         <Select
           value={value}

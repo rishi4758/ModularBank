@@ -72,7 +72,7 @@ function Form({
               name="industry"
               value={data.user.industry}
               handleChange={handleChange}
-              defaultValue="Banking"
+              defaultValue={data.user.defaultIndustry}
             />
             <Select
               renderData={countryData}

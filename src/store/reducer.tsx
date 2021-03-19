@@ -13,6 +13,7 @@ export interface store {
     jobTitle: string;
     company: string;
     industry: string;
+    defaultIndustry: string;
     country: string;
     operatingGeography: string;
     about: string;
@@ -28,6 +29,7 @@ const initState = {
     email: "",
     jobTitle: "",
     company: "",
+    defaultIndustry: "Banking",
     industry: "",
     country: "",
     operatingGeography: "",
@@ -41,12 +43,8 @@ const initState = {
 export default function reducer(state: store = initState, action: any) {
   switch (action.type) {
     case HANDLE_INPUT:
-      if (state.user.industry === "") {
-        return {
-          ...state,
-          user: { ...state.user, industry: "Banking", ...action.payload },
-        };
-      }
+      console.log(state.user);
+
       return { ...state, user: { ...state.user, ...action.payload } };
     case HANDLE_SUBMIT:
       if (
@@ -54,8 +52,7 @@ export default function reducer(state: store = initState, action: any) {
         state.user.firstName &&
         state.user.email &&
         state.user.company &&
-        state.user.country &&
-        state.user.industry
+        state.user.country
       ) {
         return { ...state, isSubmit: true };
       }
