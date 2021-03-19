@@ -43,8 +43,6 @@ const initState = {
 export default function reducer(state: store = initState, action: any) {
   switch (action.type) {
     case HANDLE_INPUT:
-      console.log(state.user);
-
       return { ...state, user: { ...state.user, ...action.payload } };
     case HANDLE_SUBMIT:
       if (
