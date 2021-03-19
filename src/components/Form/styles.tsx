@@ -36,6 +36,7 @@ const Style = (theme: typeof Theme) => ({
     display: "flex",
     // alignItems: "space-between",
   },
+
   textContainer: {
     marginBottom: 30,
     lineHeight: 0,
@@ -80,6 +81,7 @@ const Style = (theme: typeof Theme) => ({
   },
 
   //------styling  checkBox Container in form.tsx file ---------
+
   checkboxContainer: {
     padding: 15,
     marginTop: 15,
@@ -87,6 +89,14 @@ const Style = (theme: typeof Theme) => ({
       padding: 0,
       marginTop: 15,
     },
+  },
+  checkIcon: {
+    background: "#3365FA",
+    color: "#fff",
+    fontSize: 20,
+    fontWeight: 900,
+    height: 24,
+    width: 24,
   },
 });
 export default Style;

@@ -113,8 +113,8 @@ theme.overrides = {
   MuiCheckbox: {
     root: {
       padding: 0,
-      height: 20,
-      width: 20,
+      height: 24,
+      width: 24,
       border: "4px solid #00",
       boxSizing: "border-box",
       borderRadius: 0,
