@@ -1,4 +1,3 @@
-import userEvent from "@testing-library/user-event";
 import {
   HANDLE_INPUT,
   HANDLE_NEWS,
