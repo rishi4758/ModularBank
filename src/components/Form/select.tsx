@@ -36,7 +36,6 @@ function SelectInput({
       <Grid item container justify="flex-start">
         <InputLabel>{label}</InputLabel>
       </Grid>
-      {console.log(value)}
       <Grid item container justify="flex-start">
         <Select
           value={value}
@@ -56,7 +55,7 @@ function SelectInput({
             },
             getContentAnchorEl: null,
           }}
-          defaultValue={name === "industry" ? defaultValue : ""}
+          defaultValue=""
         >
           <MenuItem value="">
             <Box pl={1}>{defaultValue}</Box>

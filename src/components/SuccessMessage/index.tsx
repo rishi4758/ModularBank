@@ -10,7 +10,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { store } from "../../store/reducer";
 import { refreshForm } from "../../store/action";
 import Styles from "./styles";
-
 function Success({
   history,
   classes,

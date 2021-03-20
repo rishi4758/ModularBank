@@ -1,3 +1,4 @@
+import userEvent from "@testing-library/user-event";
 import {
   HANDLE_INPUT,
   HANDLE_NEWS,
@@ -12,7 +13,6 @@ export interface store {
     email: string;
     jobTitle: string;
     company: string;
-    defaultIndustry: string;
     industry: string;
     country: string;
     operatingGeography: string;
@@ -29,7 +29,6 @@ const initState = {
     email: "",
     jobTitle: "",
     company: "",
-    defaultIndustry: "Banking",
     industry: "",
     country: "",
     operatingGeography: "",
@@ -52,7 +51,18 @@ export default function reducer(state: store = initState, action: any) {
         state.user.company &&
         state.user.country
       ) {
-        return { ...state, isSubmit: true };
+        if (state.user.industry === "") {
+          return {
+            ...state,
+            isSubmit: true,
+            user: { ...state.user, industry: "Banking" },
+          };
+        }
+        return {
+          ...state,
+          isSubmit: true,
+          user: { ...state.user, industry: "Banking" },
+        };
       }
       return { ...state, isSubmit: false };
     case HANDLE_PRIVACY:
