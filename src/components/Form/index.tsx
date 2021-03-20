@@ -1,7 +1,6 @@
 import React, { ChangeEvent, useEffect, useState, FormEvent } from "react";
 import { RouteComponentProps } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-
+import { useDispatch } from "react-redux";
 import Form from "./form";
 import {
   handleInput,
@@ -12,7 +11,6 @@ import {
 const Main: React.FC<RouteComponentProps> = ({ history }) => {
   const dispatch = useDispatch();
   const [checkRequiredField, setCheckRequiredField] = useState(false);
-
   useEffect(() => {
     dispatch(handleSubmit());
   }, [checkRequiredField]);

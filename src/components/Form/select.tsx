@@ -38,7 +38,7 @@ function SelectInput({
       </Grid>
       <Grid item container justify="flex-start">
         <Select
-          value={value}
+          value={value ? value : ""}
           name={name}
           variant="outlined"
           onChange={handleChange}
@@ -48,7 +48,6 @@ function SelectInput({
               vertical: "bottom",
               horizontal: "left",
             },
-            PopoverClasses: {},
             transformOrigin: {
               vertical: "top",
               horizontal: "left",
